@@ -1,0 +1,10 @@
+{
+    "name": "Purgatory App",
+    "description": "Purgatory App | Manage your approvals",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "action": {
+      "default_title": "Purgatory App",
+      "default_popup": "index.html"
+    }
+  }
