@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app';
+import { config } from '../services/config'
 import {
   EthereumClient,
   w3mConnectors,
@@ -8,20 +9,15 @@ import {
 import { Web3Modal } from "@web3modal/react";
 import { useEffect, useState } from "react";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
-import {
-  mainnet,
-  goerli,
-  polygon
-} from "wagmi/chains";
 
 if (!process.env.NEXT_PUBLIC_PROJECT_ID) {
   throw new Error("You need to provide NEXT_PUBLIC_PROJECT_ID env variable");
 }
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
 
+const BlastSepolia = config.customNetworks[0];
 const chains = [
-  mainnet,
-  goerli
+  BlastSepolia
 ];
 
 const { provider } = configureChains(chains, [w3mProvider({ projectId })]);

@@ -6,9 +6,6 @@ export default function FormattedWallet(props:{ address:`0x${string}` | undefine
     const { data, isError, isLoading } = useEnsName({ address: address});
 
     const label = function () {
-        if (isError) {
-          return "Error";
-        }
         if (isLoading) {
           return "Loading...";
         }
